@@ -12,17 +12,20 @@ Option Explicit
 ' =====================
 ' ワークブックオープン
 ' =====================
-Public Sub Workbook_Opne()
+Public Sub Workbook_Open()
     ' マクロのショートカットキー設定
     SetShortcutKeys
 End Sub
 
 ' =====================
 ' ショートカットキー設定
+'   ※ Ctrl  : ^
+'      Shift : +
+'      Alt   : %
 ' =====================
 Public Sub SetShortcutKeys()
-    ' [Ctrl+Shift+g]    : 特定キーワードの強調表示
-    Application.OnKey "+^g", "ThisWorkbook.特定キーワードの強調表示"
+    ' [Alt+g]    : 特定キーワードの強調表示
+    Application.OnKey "%g", "ThisWorkbook.特定キーワードの強調表示"
 End Sub
 
 Public Sub 特定キーワードの強調表示()
